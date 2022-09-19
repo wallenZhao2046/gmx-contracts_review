@@ -125,6 +125,7 @@ contract Vault is ReentrancyGuard, IVault {
     // lastFundingTimes tracks the last time funding was updated for a token
     mapping (address => uint256) public override lastFundingTimes;
 
+    /**  mapping of positions: how to manage vault position */
     // positions tracks all open positions
     mapping (bytes32 => Position) public positions;
 
@@ -829,6 +830,7 @@ contract Vault is ReentrancyGuard, IVault {
         );
     }
 
+    /** this is usage of mapping key: hash key based on several factors */
     function getPositionKey(address _account, address _collateralToken, address _indexToken, bool _isLong) public pure returns (bytes32) {
         return keccak256(abi.encodePacked(
             _account,

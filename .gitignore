@@ -11,7 +11,9 @@ data/snapshotBalance
 data/holders
 flattened
 distribution-data*.json
+.history
 
 #Hardhat files
 cache
 artifacts
+
